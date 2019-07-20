@@ -5,4 +5,5 @@
   border: 2rpx dashed #ccc;
   height: 300rpx;
   color: #353535;
+  padding: 10rpx;
 }

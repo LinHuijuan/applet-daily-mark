@@ -1,10 +1,12 @@
 <!-- mark.wxml -->
 <view class="container">
+
   <canvas canvas-id="mark" style="width: 325px; height: 400px;" binderror="canvasIdErrorCallback"></canvas>
+
   <!-- <cover-input></cover-input> -->
   <cover-view class='{{show?"mark-text-active":"mark-text"}}' bindtap="writeInput">
     <cover-view>{{inputInfo}}</cover-view>
-    <input type="text" focus="{{inputfocus}}" bindfocus="passValue" bindblur="hideInput"></input>
+    <input type="text" focus="{{inputfocus}}" bindblur="hideInput"></input>
   </cover-view>
 
   <view class="create">

@@ -3,9 +3,12 @@ var ctx = wx.createCanvasContext('mark')
 Page({
 
   data: {
+    // 心情系数选择
     array: [1, 2, 3, 4, 5],
     index: 0,
+    // 是否显示cover-input
     show: false,
+    // 存放图片路径
     files: [],
     // input 框的focus状态
     inputFocus: false,
@@ -30,17 +33,18 @@ Page({
 
   // 上传图片
   chooseImg: function(e) {
+
     var that = this;
     wx.chooseImage({
-      sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
-      sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
       success: function(res) {
-        // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
+        // 返回选定照片的本地文件路径列表
+        // tempFilePath可以作为img标签的src属性显示图片
         that.setData({
           files: that.data.files.concat(res.tempFilePaths)
         });
       }
     })
+    
   },
 
   // 显示输入
@@ -50,7 +54,6 @@ Page({
     })
   },
 
-  //将焦点给到 input（在真机上不能获取input焦点）
   writeInput: function() {
     this.setData({
       //在真机上将焦点给input
@@ -62,7 +65,7 @@ Page({
   // 传值
   passValue: function(e) {
     this.setData({
-      inputInfo: e.detail.value
+      inputInfo: e.detail.value || '记录专属你的小时光……'
     })
   },
 
@@ -75,6 +78,7 @@ Page({
 
   // 生成图片
   createImg: function() {
+
     wx.canvasToTempFilePath({
       x: 0,
       y: 0,
@@ -84,6 +88,7 @@ Page({
       destHeight: 440,
       canvasId: 'mark',
       success(res) {
+
         // 生成文件的临时路径
         console.log(res.tempFilePath)
         wx.saveImageToPhotosAlbum(res.tempFilePath, {
@@ -95,8 +100,10 @@ Page({
             })
           }
         })
+
       }
     })
+
   },
   canvasIdErrorCallback: function(e) {
     console.error('Error: ' + e.detail.errMsg)
@@ -105,7 +112,6 @@ Page({
 
   // 生命周期函数--监听页面初次渲染完成
   onReady: function() {
-
 
     var date = new Date()
     var day = date.getDate()
@@ -128,5 +134,6 @@ Page({
     ctx.setFontSize(16)
     ctx.fillText(month + '.' + year, 70, 50)
     ctx.draw()
+
   }
 })
