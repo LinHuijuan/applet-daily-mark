@@ -1,0 +1,6 @@
+<!--index.wxml-->
+<view class="container">
+  <view>
+    <button class="user-click" bindtap="start">{{start}}</button>
+  </view>
+</view>

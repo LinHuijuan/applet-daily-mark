@@ -1,0 +1,12 @@
+/**index.wxss**/
+.container{
+  justify-content: center;
+  align-items: center;
+}
+.user-click {
+  width: 400rpx;
+  border: 2rpx solid #3498DB;
+  color: #3498DB;
+  background: #fff;
+  margin: auto;
+}

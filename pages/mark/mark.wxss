@@ -1,0 +1,8 @@
+.mark-text{
+  display: none;
+}
+.mark-text-active{
+  border: 2rpx dashed #ccc;
+  height: 300rpx;
+  color: #353535;
+}

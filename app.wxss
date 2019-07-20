@@ -1,0 +1,9 @@
+/**app.wxss**/
+@import 'weui.wxss';
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 50rpx 50rpx;
+  box-sizing: border-box;
+} 
