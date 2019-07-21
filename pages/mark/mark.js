@@ -44,7 +44,7 @@ Page({
         });
       }
     })
-    
+
   },
 
   // 显示输入
@@ -82,10 +82,10 @@ Page({
     wx.canvasToTempFilePath({
       x: 0,
       y: 0,
-      width: 340,
-      height: 440,
-      destWidth: 340,
-      destHeight: 440,
+      width: 325,
+      height: 400,
+      destWidth: 325,
+      destHeight: 400,
       canvasId: 'mark',
       success(res) {
 
@@ -122,9 +122,9 @@ Page({
     ctx.setStrokeStyle('#ccc');
     ctx.beginPath()
     ctx.moveTo(0, 0)
-    ctx.lineTo(340, 0)
-    ctx.lineTo(340, 440)
-    ctx.lineTo(0, 440)
+    ctx.lineTo(325, 0)
+    ctx.lineTo(325, 400)
+    ctx.lineTo(0, 400)
     ctx.lineTo(0, 0)
     ctx.closePath()
     ctx.stroke()
