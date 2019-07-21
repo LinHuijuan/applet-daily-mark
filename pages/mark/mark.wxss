@@ -1,9 +1,23 @@
-.mark-text{
+.container {
+  justify-content: center;
+}
+
+.mark-text {
   display: none;
 }
-.mark-text-active{
-  border: 2rpx dashed #ccc;
-  height: 300rpx;
-  color: #353535;
-  padding: 10rpx;
+
+.mark-text-active {
+  border: 2rpx dashed #3498db;
+  height: 60rpx;
+  color: #3498db;
+  padding: 10rpx 10rpx;
+}
+
+.canvas {
+  border: 2rpx solid #3498db;
+}
+
+button {
+  color: #3498db;
+  border: 2rpx solid #3498db;
 }

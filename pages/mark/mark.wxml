@@ -1,15 +1,11 @@
 <!-- mark.wxml -->
 <view class="container">
+  <view class="canvas">
+    <canvas canvas-id="mark" style="width: {{cWidth}}px; height: {{cHeight}}px;"></canvas>
+  </view>
 
-  <canvas canvas-id="mark" style="width: 325px; height: 400px;" binderror="canvasIdErrorCallback"></canvas>
-
-  <!-- <cover-input></cover-input> -->
-  <cover-view class='{{show?"mark-text-active":"mark-text"}}' bindtap="writeInput">
-    <cover-view>{{inputInfo}}</cover-view>
-    <input type="text" focus="{{inputfocus}}" bindblur="hideInput"></input>
-  </cover-view>
-
-  <view class="create">
+  <view class="create" style="width:{{cWidth}}px;height:50px;">
+    <input type="text" class='{{show?"mark-text-active":"mark-text"}}' placeholder="记录专属你的小时光……" bindblur="hideInput" bindconfirm="drawMsg"></input>
     <view class="mood-stars">
       <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
         <button>心情星级</button>
@@ -17,6 +13,6 @@
     </view>
     <button class="choose-img" bindtap="chooseImg">选择图片</button>
     <button class="write-msg" bindtap="writeMsg">输入文本</button>
-    <button class="create-img" bindtap="createImg">生成图片</button>
+    <button class="create-img" bindtap="createImg">生成便签</button>
   </view>
 </view>

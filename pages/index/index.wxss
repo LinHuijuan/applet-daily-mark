@@ -1,7 +1,6 @@
 /**index.wxss**/
 .container{
   justify-content: center;
-  align-items: center;
 }
 .user-click {
   width: 400rpx;
